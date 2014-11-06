@@ -8,6 +8,9 @@ $(function () {
       var purplecoatToggleData = $(this).attr('data-purplecoat-toggle');
       var $purplecoatTarget = $("[data-purplecoat=" + purplecoatToggleData + "]");
 
+      //クリックしたトリガーのdata-purplecoat-colorを取得する
+      var purplecoatColorData = $(this).attr('data-purplecoat-color');
+
       //$purplecoatが表示されていたら､フェードアウトさせ､
       //表示されていなかったらフェードインさせる
       if ($("[data-purplecoat-for=" + purplecoatToggleData + "]:visible").size() > 0) {
@@ -19,9 +22,10 @@ $(function () {
         $purplecoatTarget.each(function() {
           var $myself = $(this);
 
-          //$purplecoatの生成
+          //$purplecoatの生成(カラーが設定されている場合は､カラー変更)
           var $purplecoat = $('<div/>');
           $purplecoat.addClass('purplecoat');
+          $purplecoat.css('background-color', purplecoatColorData);
           $('body').append($purplecoat);
 
           var $purplecoatInner = $('<div/>');
