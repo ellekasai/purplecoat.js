@@ -25,7 +25,9 @@ $(function () {
           //$purplecoatの生成(カラーが設定されている場合は､カラー変更)
           var $purplecoat = $('<div/>');
           $purplecoat.addClass('purplecoat');
-          $purplecoat.css('background-color', purplecoatColorData);
+          if (purplecoatColorData) {
+            $purplecoat.css('background-color', purplecoatColorData);
+          }
           $('body').append($purplecoat);
 
           var $purplecoatInner = $('<div/>');
