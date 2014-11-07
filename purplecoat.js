@@ -1,14 +1,18 @@
 $(function () {
   var $purplecoatTrigger = $('[data-purplecoat-toggle]');
 
-  var styles = '.purplecoat { display: none; position: absolute; padding: 5px; box-sizing: border-box; background-color: rgba(142, 68, 173, 0.8); color: #FFF; text-align: center; font-weight: bold; overflow: hidden; } .purplecoat-inner { display: table; width: 100%; height: 100%; } .purplecoat-inner-text { display: table-cell; vertical-align: middle;';
+  var setStyles = function () {
+    var styles = '.purplecoat { display: none; position: absolute; padding: 5px; box-sizing: border-box; background-color: rgba(142, 68, 173, 0.8); color: #FFF; text-align: center; font-weight: bold; overflow: hidden; } .purplecoat-inner { display: table; width: 100%; height: 100%; } .purplecoat-inner-text { display: table-cell; vertical-align: middle;';
 
-  var $style = $('<style/>');
-  $style.html(styles);
-  $('head').prepend($style);
+    var $style = $('<style/>');
+    $style.html(styles);
+    $('head').prepend($style);
+  };
+
+  setStyles();
 
   //$purplecoatTriggerをクリックしたら
-  $purplecoatTrigger.on('click', function() {
+  $purplecoatTrigger.on('click', function () {
 
       //クリックしたdata-purplecoat-toggleの中身を取得し､data-purplecoatにトリガーのdataを代入する
       var purplecoatToggleData = $(this).attr('data-purplecoat-toggle');
@@ -25,7 +29,7 @@ $(function () {
         $("[data-purplecoat-for=" + purplecoatToggleData + "]:hidden").fadeIn();
       } else {
         //$purplecoatのターゲットそれぞれで行うよ
-        $purplecoatTarget.each(function() {
+        $purplecoatTarget.each(function () {
           var $myself = $(this);
 
           //$purplecoatの生成(カラーが設定されている場合は､カラー変更)
