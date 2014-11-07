@@ -1,5 +1,4 @@
 $(function () {
-  var $purplecoatTrigger = $('[data-purplecoat-toggle]');
 
   var setStyles = function () {
     var styles = '.purplecoat { display: none; position: absolute; padding: 5px; box-sizing: border-box; background-color: rgba(142, 68, 173, 0.8); color: #FFF; text-align: center; font-weight: bold; overflow: hidden; } .purplecoat-inner { display: table; width: 100%; height: 100%; } .purplecoat-inner-text { display: table-cell; vertical-align: middle;';
@@ -12,11 +11,10 @@ $(function () {
   setStyles();
 
   //$purplecoatTriggerをクリックしたら
-  $purplecoatTrigger.on('click', function () {
+  $('[data-purplecoat-toggle]').on('click', function () {
 
       //クリックしたdata-purplecoat-toggleの中身を取得し､data-purplecoatにトリガーのdataを代入する
       var purplecoatToggleData = $(this).attr('data-purplecoat-toggle');
-      var $purplecoatTarget = $("[data-purplecoat=" + purplecoatToggleData + "]");
 
       //クリックしたトリガーのdata-purplecoat-colorを取得する
       var purplecoatColorData = $(this).attr('data-purplecoat-color');
@@ -29,7 +27,7 @@ $(function () {
         $("[data-purplecoat-for=" + purplecoatToggleData + "]:hidden").fadeIn();
       } else {
         //$purplecoatのターゲットそれぞれで行うよ
-        $purplecoatTarget.each(function () {
+        $("[data-purplecoat=" + purplecoatToggleData + "]").each(function () {
           var $myself = $(this);
 
           //$purplecoatの生成(カラーが設定されている場合は､カラー変更)
@@ -52,23 +50,16 @@ $(function () {
           var purplecoatText = $myself.attr('data-purplecoat-label');
           $purplecoatInnerText.html(purplecoatText);
 
-          //$purplecoatにdata-purplecoat-forという新しい属性をつくり､そこにトリガーのデータを保存する
-          $purplecoat.attr('data-purplecoat-for', purplecoatToggleData);
+          $purplecoat
+            .attr('data-purplecoat-for', purplecoatToggleData)
+            .css({
+              'top': $myself.offset().top,
+              'left': $myself.offset().left,
+              'width': $myself.width(),
+              'height': $myself.height() })
+            .fadeIn();
 
-          //$purplecoatのターゲットのwidthとheightを取得し､$purplecoatの大きさを決める
-          var purplecoatTargetWidth = $myself.width();
-          var purplecoatTargetHeight = $myself.height();
-          $purplecoat.css({'width' : purplecoatTargetWidth, 'height' : purplecoatTargetHeight});
-
-          //$purplecoatの位置を設定する
-          var purplecoatTargetPosition = $myself.offset();
-          var purplecoatPositionTop = purplecoatTargetPosition.top;
-          var purplecoatPositionLeft = purplecoatTargetPosition.left;
-          $purplecoat.css({'top' : purplecoatPositionTop, 'left' : purplecoatPositionLeft});
-
-          //$purplecoatをフェードインさせる
-          $purplecoat.fadeIn();
-          });
+        });
       }
   });
 });
