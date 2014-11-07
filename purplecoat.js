@@ -1,51 +1,41 @@
 $(function () {
 
-  var setStyles = function () {
-    var styles = '.purplecoat { display: none; position: absolute; padding: 5px; box-sizing: border-box; background-color: rgba(142, 68, 173, 0.8); color: #FFF; text-align: center; font-weight: bold; overflow: hidden; } .purplecoat-inner { display: table; width: 100%; height: 100%; } .purplecoat-inner-text { display: table-cell; vertical-align: middle;';
+  var styles = '.purplecoat { display: none; position: absolute; padding: 5px; box-sizing: border-box; background-color: rgba(142, 68, 173, 0.8); color: #FFF; text-align: center; font-weight: bold; overflow: hidden; } .purplecoat-inner { display: table; width: 100%; height: 100%; } .purplecoat-inner-text { display: table-cell; vertical-align: middle;';
 
-    var $style = $('<style/>');
-    $style.html(styles);
-    $('head').prepend($style);
-  };
+  var $style = $('<style/>');
+  $style.html(styles);
+  $('head').prepend($style);
 
-  setStyles();
-
-  //$purplecoatTriggerをクリックしたら
   $('[data-purplecoat-toggle]').on('click', function () {
 
-      //クリックしたdata-purplecoat-toggleの中身を取得し､data-purplecoatにトリガーのdataを代入する
-      var purplecoatToggleData = $(this).attr('data-purplecoat-toggle');
+      var purplecoatToggleData = $(this).data('purplecoat-toggle');
+      var $purplecoatVisible = $("[data-purplecoat-for=" + purplecoatToggleData + "]:visible");
+      var $purplecoatHidden = $("[data-purplecoat-for=" + purplecoatToggleData + "]:hidden");
 
-      //クリックしたトリガーのdata-purplecoat-colorを取得する
-      var purplecoatColorData = $(this).attr('data-purplecoat-color');
-
-      //$purplecoatが表示されていたら､フェードアウトさせ､
-      //表示されていなかったらフェードインさせる
-      if ($("[data-purplecoat-for=" + purplecoatToggleData + "]:visible").size() > 0) {
-        $("[data-purplecoat-for=" + purplecoatToggleData + "]:visible").fadeOut();
-      } else if ($("[data-purplecoat-for=" + purplecoatToggleData + "]:hidden").size() > 0) {
-        $("[data-purplecoat-for=" + purplecoatToggleData + "]:hidden").fadeIn();
+      if ($purplecoatVisible.size()) {
+        $purplecoatVisible.fadeOut();
+      } else if ($purplecoatHidden.size()) {
+        $purplecoatHidden.fadeIn();
       } else {
-        //$purplecoatのターゲットそれぞれで行うよ
+
+        var purplecoatColorData = $(this).data('purplecoat-color');
+
         $("[data-purplecoat=" + purplecoatToggleData + "]").each(function () {
           var $myself = $(this);
 
-          //$purplecoatの生成(カラーが設定されている場合は､カラー変更)
           var $purplecoat = $('<div class="purplecoat"></div>');
-          if (purplecoatColorData) {
-            $purplecoat.css('background-color', purplecoatColorData);
-          }
           $('body').append($purplecoat);
 
           var $purplecoatInner = $('<div class="purplecoat-inner"></div>');
           $purplecoat.append($purplecoatInner);
 
           var $purplecoatInnerText = $('<div class="purplecoat-inner-text"></div>');
+          $purplecoatInnerText.html($myself.data('purplecoat-label'));
           $purplecoatInner.append($purplecoatInnerText);
 
-          //$purplecoatのlabelに記載されているdataを抽出し､$purplecoatに書き出す
-          var purplecoatText = $myself.attr('data-purplecoat-label');
-          $purplecoatInnerText.html(purplecoatText);
+          if (purplecoatColorData) {
+            $purplecoat.css('background-color', purplecoatColorData);
+          }
 
           $purplecoat
             .attr('data-purplecoat-for', purplecoatToggleData)
