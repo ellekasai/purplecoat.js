@@ -1,25 +1,11 @@
 $(function () {
   var $purplecoatTrigger = $('[data-purplecoat-toggle]');
-  var purplecoatStyle = {
-    'display': 'none',
-    'position': 'absolute',
-    'padding': '5px',
-    'box-sizing': 'border-box',
-    'background-color': 'rgba(142, 68, 173, 0.8)',
-    'color': '#FFF',
-    'text-align': 'center',
-    'font-weight': 'bold',
-    'overflow': 'hidden'
-  }
-  var purplecoatInnerStyle = {
-    'display': 'table',
-    'width': '100%',
-    'height': '100%'
-  };
-  var purplecoatInnerTextStyle = {
-    'display': 'table-cell',
-    'vertical-align': 'middle'
-  };
+
+  var styles = '.purplecoat { display: none; position: absolute; padding: 5px; box-sizing: border-box; background-color: rgba(142, 68, 173, 0.8); color: #FFF; text-align: center; font-weight: bold; overflow: hidden; } .purplecoat-inner { display: table; width: 100%; height: 100%; } .purplecoat-inner-text { display: table-cell; vertical-align: middle;';
+
+  var $style = $('<style/>');
+  $style.html(styles);
+  $('head').prepend($style);
 
   //$purplecoatTriggerをクリックしたら
   $purplecoatTrigger.on('click', function() {
@@ -44,18 +30,18 @@ $(function () {
 
           //$purplecoatの生成(カラーが設定されている場合は､カラー変更)
           var $purplecoat = $('<div/>');
-          $purplecoat.css(purplecoatStyle);
+          $purplecoat.addClass('purplecoat');
           if (purplecoatColorData) {
             $purplecoat.css('background-color', purplecoatColorData);
           }
           $('body').append($purplecoat);
 
           var $purplecoatInner = $('<div/>');
-          $purplecoatInner.css(purplecoatInnerStyle);
+          $purplecoatInner.addClass('purplecoat-inner');
           $purplecoat.append($purplecoatInner);
 
           var $purplecoatInnerText = $('<div/>');
-          $purplecoatInnerText.css(purplecoatInnerTextStyle);
+          $purplecoatInnerText.addClass('purplecoat-inner-text');
           $purplecoatInner.append($purplecoatInnerText);
 
           //$purplecoatのlabelに記載されているdataを抽出し､$purplecoatに書き出す
