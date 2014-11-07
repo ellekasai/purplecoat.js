@@ -31,19 +31,16 @@ $(function () {
           var $myself = $(this);
 
           //$purplecoatの生成(カラーが設定されている場合は､カラー変更)
-          var $purplecoat = $('<div/>');
-          $purplecoat.addClass('purplecoat');
+          var $purplecoat = $('<div class="purplecoat"></div>');
           if (purplecoatColorData) {
             $purplecoat.css('background-color', purplecoatColorData);
           }
           $('body').append($purplecoat);
 
-          var $purplecoatInner = $('<div/>');
-          $purplecoatInner.addClass('purplecoat-inner');
+          var $purplecoatInner = $('<div class="purplecoat-inner"></div>');
           $purplecoat.append($purplecoatInner);
 
-          var $purplecoatInnerText = $('<div/>');
-          $purplecoatInnerText.addClass('purplecoat-inner-text');
+          var $purplecoatInnerText = $('<div class="purplecoat-inner-text"></div>');
           $purplecoatInner.append($purplecoatInnerText);
 
           //$purplecoatのlabelに記載されているdataを抽出し､$purplecoatに書き出す
