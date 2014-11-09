@@ -6,7 +6,8 @@
   <title>Purplecoat.js Demo Page</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
   <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/default.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,26 +15,38 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
         <h1 class="title">purplecoat.js</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam autem, earum laudantium, blanditiis porro odit! </p>
+        <p class="lead row-md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam autem, earum laudantium, blanditiis porro odit! </p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tenetur facere nihil pariatur vitae odit. Architecto eaque provident cupiditate cumque nostrum dolore quasi amet qui corporis dolorum labore voluptatibus, voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tenetur facere nihil pariatur vitae odit. Architecto eaque provident cupiditate cumque nostrum dolore quasi amet qui corporis dolorum labore voluptatibus, voluptas.</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6 example-step1">
-        <p><code>data-purplecoat-toggle="X"</code>を指定したボタンを設置｡</p>
-        <button class="btn btn-default btn-lg" data-purplecoat-toggle="X">Click Me!</button>
-        <pre><code>&lt;button class="btn btn-default" data-purplecoat-toggle="X">
+    <div class="row row-md">
+      <div class="col-md-12">
+        <h2 class="subheading">Usage</h2>
+      </div>
+      <div class="col-md-12 row-md">
+        <div class="col-md-6 example-step1">
+          <p><strong>Step 1: </strong> Add <code>data-purplecoat="foo"</code> and <code>data-purplecoat-label="Hello!"</code> to any element.</p>
+          <img data-purplecoat="foo" data-purplecoat-label="Hello!" src="holder.js/200x150/#FE97CA:#D64F91">
+          <pre><code class="html">&lt;img data-purplecoat="foo"
+       data-purplecoat-label="Hello!"
+       src="holder.js/200x150/#FE97CA:#D64F91"&gt;</code></pre>
+        </div>
+        <div class="col-md-6 example-step2">
+          <p><strong>Step 2:</strong> Add <code>data-purplecoat-toggle="foo"</code> to any clickable element.</p>
+          <p>Now, go ahead and click this button to show the overlay label. Click again to hide the label.</p>
+          <button data-purplecoat-toggle="foo" class="btn btn-default btn-lg">Click Me!</button>
+          <pre><code class="html">&lt;button data-purplecoat-toggle="foo" class="btn btn-default">
   Click Me!
 &lt;/button&gt;</code></pre>
-      </div>
-      <div class="col-md-6 example-step2">
-        <p><code>data-purplecoat="X"</code>が指定された要素に紫色のカバーが被さり､同じ要素に指定された<code>data-purplecoat-label="This is Sample Image!"</code>が紫色のカバに白文字で表示される｡</p>
-        <p data-purplecoat="X" data-purplecoat-label="This is Sample Paragraph!">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ex animi nemo placeat sapiente debitis quae a. Minima nobis quo nam, necessitatibus, saepe nulla quaerat quos, natus provident consectetur aliquam.</p>
-        <pre><code>&lt;p data-purplecoat="X" data-purplecoat-label="This is Sample Paragraph!"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ex animi nemo placeat sapiente debitis quae a. Minima nobis quo nam, necessitatibus, saepe nulla quaerat quos, natus provident consectetur aliquam.&lt;/p&gt;</code></pre>
+          <p class="text-muted">(<strong>Explanation:</strong> The value of <code>deta-purplecoat-toggle</code> must match the value of <code>data-purplecoat</code> to make this all work.)</p>
+        </div>
       </div>
     </div>
   </main>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.4.1/holder.js"></script>
   <script type="text/javascript" src="purplecoat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
