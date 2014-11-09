@@ -2,42 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Purple Coat Sample</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Purplecoat.js Demo Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="cf">
-    <div class="sidebar">
-      <ul>
-        <li><a href="#">Menu1</a></li>
-        <li><a href="#">Menu2</a></li>
-        <li><a href="#">Menu3</a></li>
-        <li><a href="#">Menu4</a></li>
-        <li><a href="#">Menu5</a></li>
-        <li><a href="#">Menu6</a></li>
-      </ul>
+  <main class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h1 class="title">purplecoat.js</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam autem, earum laudantium, blanditiis porro odit! </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tenetur facere nihil pariatur vitae odit. Architecto eaque provident cupiditate cumque nostrum dolore quasi amet qui corporis dolorum labore voluptatibus, voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tenetur facere nihil pariatur vitae odit. Architecto eaque provident cupiditate cumque nostrum dolore quasi amet qui corporis dolorum labore voluptatibus, voluptas.</p>
+      </div>
     </div>
-    <div class="articles">
-      <h2>Sample Title</h2>
-      <ul class="articles-list">
-        <li class="cf">
-          <h3>Sample Article Title1</h3>
-          <figure data-purplecoat-label="Sample Image" data-purplecoat="a"><img src="http://dummyimage.com/200x150/000/fff" alt="Sample Image 1"></figure>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque error, rem repudiandae quibusdam nisi veniam atque, aliquam autem impedit doloribus fugiat eos cumque laboriosam maiores inventore. Ducimus sint officia voluptatibus!</p>
-        </li>
-        <li class="cf">
-          <h3 data-purplecoat-label="This is H3" data-purplecoat="b">Sample Article Title2</h3>
-          <figure><img src="http://dummyimage.com/200x150/000/fff" alt="Sample Image 2"></figure>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque error, rem repudiandae quibusdam nisi veniam atque, aliquam autem impedit doloribus fugiat eos cumque laboriosam maiores inventore. Ducimus sint officia voluptatibus!</p>
-        </li>
-        <li class="cf">
-          <h3>Sample Article Title3</h3>
-          <figure><img src="http://dummyimage.com/200x150/000/fff" alt="Sample Image 3"></figure>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque error, rem repudiandae quibusdam nisi veniam atque, aliquam autem impedit doloribus fugiat eos cumque laboriosam maiores inventore. Ducimus sint officia voluptatibus!</p>
-        </li>
-      </ul>
-      <button data-purplecoat-toggle="a" data-purplecoat-color="rgba(26, 188, 156, 0.8)">Start Purple Coat Demo A</button>
-      <button data-purplecoat-toggle="b">Start Purple Coat Demo B</button>
+    <div class="row">
+      <div class="col-md-6 example-step1">
+        <p><code>data-purplecoat-toggle="X"</code>を指定したボタンを設置｡</p>
+        <button class="btn btn-default btn-lg" data-purplecoat-toggle="X">Click Me!</button>
+        <pre><code>&lt;button class="btn btn-default" data-purplecoat-toggle="X">
+  Click Me!
+&lt;/button&gt;</code></pre>
+      </div>
+      <div class="col-md-6 example-step2">
+        <p><code>data-purplecoat="X"</code>が指定された要素に紫色のカバーが被さり､同じ要素に指定された<code>data-purplecoat-label="This is Sample Image!"</code>が紫色のカバに白文字で表示される｡</p>
+        <p data-purplecoat="X" data-purplecoat-label="This is Sample Paragraph!">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ex animi nemo placeat sapiente debitis quae a. Minima nobis quo nam, necessitatibus, saepe nulla quaerat quos, natus provident consectetur aliquam.</p>
+        <pre><code>&lt;p data-purplecoat="X" data-purplecoat-label="This is Sample Paragraph!"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ex animi nemo placeat sapiente debitis quae a. Minima nobis quo nam, necessitatibus, saepe nulla quaerat quos, natus provident consectetur aliquam.&lt;/p&gt;</code></pre>
+      </div>
     </div>
   </main>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
