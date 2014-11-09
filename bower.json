@@ -14,6 +14,6 @@
   "ignore": [
     "**/.*",
     "index.html",
-    "style.css",
+    "style.css"
   ]
 }
