@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="main-padding hidden-xs"></div>
   <main class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
@@ -38,7 +39,7 @@
       </div>
       <div class="col-md-6 space-md example-step1">
         <p><strong>Step 1: </strong> Add <code>data-purplecoat="foo"</code> and <code>data-purplecoat-label="Hello!"</code> to any element.</p>
-        <img data-purplecoat="foo" data-purplecoat-label="Hello!" src="holder.js/200x150/#FE97CA:#D64F91">
+        <img data-purplecoat="foo" data-purplecoat-label="Hello!" src="holder.js/200x150/#FE97CA:#D64F91" class="hidden-xs">
         <pre><code class="html">&lt;img data-purplecoat="foo"
      data-purplecoat-label="Hello!"
      src="holder.js/200x150/#FE97CA:#D64F91"&gt;</code></pre>
@@ -47,6 +48,10 @@
         <p><strong>Step 2:</strong> Add <code>data-purplecoat-toggle="foo"</code> to any clickable element.</p>
         <p>Now, go ahead and click this button to show the overlay label. Click again to hide the label.</p>
         <button data-purplecoat-toggle="foo" class="btn btn-default btn-lg">Click Me!</button>
+        <div class="visible-xs-block">
+          <img data-purplecoat="foo" data-purplecoat-label="Hello!" src="holder.js/200x50/#FE97CA:#D64F91">
+          <div class="space-md"></div>
+        </div>
         <pre><code class="html">&lt;button data-purplecoat-toggle="foo" class="btn btn-default">
 Click Me!
 &lt;/button&gt;</code></pre>
@@ -135,12 +140,24 @@ Click Me!
       </div>
     </div>
   </main>
+  <div class="hidden-xs">
+    <div class="github-fork-ribbon-wrapper right fixed" style="width: 150px;height: 150px;position: fixed;overflow: hidden;top: 0;z-index: 9999;pointer-events: none;right: 0;"><div class="github-fork-ribbon" style="position: absolute;padding: 2px 0;background-color: rgba(142, 68, 173, 1);background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));-webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);-moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);z-index: 9999;pointer-events: auto;top: 42px;right: -43px;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-ms-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg);"><a href="http://github.com/ellekasai/purplecoat.js" style="font: 700 13px &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;color: #fff;text-decoration: none;text-shadow: 0 -1px rgba(0, 0, 0, 0.5);text-align: center;width: 200px;line-height: 20px;display: inline-block;padding: 2px 0;border-width: 1px 0;border-style: dotted;border-color: rgba(255, 255, 255, 0.7);" target="_blank">Fork me on GitHub</a></div></div>
+  </div>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.4.1/holder.js"></script>
   <script type="text/javascript" src="purplecoat.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-36051690-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </body>
 </html>

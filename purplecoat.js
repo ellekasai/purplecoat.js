@@ -23,6 +23,10 @@ $(function () {
         $("[data-purplecoat=" + purplecoatToggleData + "]").each(function () {
           var $myself = $(this);
 
+          if ($myself.is(":hidden")) {
+            return;
+          }
+
           var $purplecoat = $('<div class="purplecoat"></div>');
           $('body').append($purplecoat);
 

@@ -37,8 +37,11 @@ code {
   Styles
 ———————————–———————————–*/
 
+.main-padding {
+  padding-top: 100px;
+}
 main {
-  padding: 100px 0;
+  padding-bottom: 100px;
 }
 .space-lg {
   margin-top: 45px;
