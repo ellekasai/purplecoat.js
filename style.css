@@ -5,6 +5,7 @@
 ———————————–———————————–*/
 
 body {
+  border-top: 5px solid rgba(142, 68, 173, 1);
   font-family: 'Alegreya Sans', sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -14,12 +15,12 @@ code {
   font-size: 80%;
   background-color: #F5DDFF;
 }
-.btn-default {
+.btn-primary {
   border-color: #804897 !important;
   background-color: #9b59b6 !important;
   color: #FFF !important;
 }
-.btn-default:hover {
+.btn-primary:hover {
   border-color: #783892 !important;
   background-color: #8e44ad !important;
   color: #FFF !important;
@@ -28,11 +29,17 @@ code {
   padding: 0;
   background: transparent;
 }
+.lead {
+  font-size: 24px;
+}
 
 /*———————————–———————————–
   Styles
 ———————————–———————————–*/
 
+main {
+  padding: 100px 0;
+}
 .space-lg {
   margin-top: 45px;
 }
@@ -46,6 +53,9 @@ code {
 }
 .title {
   font-size: 50px;
+}
+.extension {
+  color: rgba(142, 68, 173, 1);
 }
 .subheading {
   font-size: 35px;

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Purplecoat.js Demo Page</title>
+  <title>Purplecoat.js | Simple Labeled Overlays</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
   <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,700' rel='stylesheet' type='text/css'>
@@ -14,21 +14,34 @@
   <main class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
-        <h1 class="title">purplecoat.js</h1>
-        <p class="lead space-md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam autem, earum laudantium, blanditiis porro odit! </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tenetur facere nihil pariatur vitae odit. Architecto eaque provident cupiditate cumque nostrum dolore quasi amet qui corporis dolorum labore voluptatibus, voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tenetur facere nihil pariatur vitae odit. Architecto eaque provident cupiditate cumque nostrum dolore quasi amet qui corporis dolorum labore voluptatibus, voluptas.</p>
+      <h1 class="title">purplecoat<span class="extension">.js</span></h1>
+        <p class="lead space-md">Purplecoat.js lets you create labeled overlays that can be triggered with a click. And you don't need to write a single line of Javascript.</p>
+      </div>
+    </div>
+    <div class="row space-lg">
+      <div class="col-md-6 col-md-offset-3">
+        <p class="text-center"><a href="https://github.com/ellekasai/purplecoat.js" target="_blank" class="btn btn-primary btn-lg">Download on GitHub &rarr;</a></p>
+      </div>
+      <div class="col-md-6 col-md-offset-3">
+        <p class="text-center"><a href="https://twitter.com/share" class="twitter-share-button" data-via="ellekasai" data-size="large">Tweet</a> <iframe src="http://ghbtns.com/github-btn.html?user=ellekasai&repo=purplecoat.js&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30" style="margin-top: 14px;"></iframe></p>
       </div>
     </div>
     <div class="row space-lg">
       <div class="col-md-12">
         <h2 class="subheading">Usage</h2>
       </div>
+      <div class="col-md-6 space-md col-md-offset-3">
+        <p><strong>Step 0: </strong> Add purplecoat.js along with jQuery.</p>
+         <pre><code class="html">&lt;script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="purplecoat.js">&lt;/script&gt;</code></pre>
+      </div>
       <div class="col-md-6 space-md example-step1">
         <p><strong>Step 1: </strong> Add <code>data-purplecoat="foo"</code> and <code>data-purplecoat-label="Hello!"</code> to any element.</p>
         <img data-purplecoat="foo" data-purplecoat-label="Hello!" src="holder.js/200x150/#FE97CA:#D64F91">
         <pre><code class="html">&lt;img data-purplecoat="foo"
-   data-purplecoat-label="Hello!"
-   src="holder.js/200x150/#FE97CA:#D64F91"&gt;</code></pre>
+     data-purplecoat-label="Hello!"
+     src="holder.js/200x150/#FE97CA:#D64F91"&gt;</code></pre>
       </div>
       <div class="col-md-6 space-md example-step2">
         <p><strong>Step 2:</strong> Add <code>data-purplecoat-toggle="foo"</code> to any clickable element.</p>
@@ -56,19 +69,19 @@ Click Me!
           <img data-purplecoat="odd" data-purplecoat-label="3 is odd" src="holder.js/80x80/#FE97CA:#D64F91/text:3">
         </div>
         <pre class="space-md"><code class="html">&lt;button data-purplecoat-toggle="odd"
-      class="btn btn-default btn-lg"&gt;Odd&lt;/button&gt;
+        class="btn btn-default btn-lg"&gt;Odd&lt;/button&gt;
 &lt;button data-purplecoat-toggle="even"
-      class="btn btn-default btn-lg"&gt;Even&lt;/button&gt;
+        class="btn btn-default btn-lg"&gt;Even&lt;/button&gt;
 
 &lt;img data-purplecoat="odd"
-   data-purplecoat-label="1 is odd"
-   src="holder.js/80x80/#FE97CA:#D64F91/text:1"&gt;
+     data-purplecoat-label="1 is odd"
+     src="holder.js/80x80/#FE97CA:#D64F91/text:1"&gt;
 &lt;img data-purplecoat="even"
-   data-purplecoat-label="2 is even"
-   src="holder.js/80x80/#FE97CA:#D64F91/text:2"&gt;
+     data-purplecoat-label="2 is even"
+     src="holder.js/80x80/#FE97CA:#D64F91/text:2"&gt;
 &lt;img data-purplecoat="odd"
-   data-purplecoat-label="3 is odd"
-   src="holder.js/80x80/#FE97CA:#D64F91/text:3"&gt;
+     data-purplecoat-label="3 is odd"
+     src="holder.js/80x80/#FE97CA:#D64F91/text:3"&gt;
 </code></pre>
       </div>
       <div class="col-md-6 space-md">
@@ -80,12 +93,45 @@ Click Me!
           <img data-purplecoat="bluecoat" data-purplecoat-label="Hello!" src="holder.js/200x150/#FE97CA:#D64F91">
         </div>
         <pre class="space-md"><code class="html">&lt;button data-purplecoat-toggle="bluecoat"
-      data-purplecoat-color="rgba(63, 159, 252, 0.8)"
-      class="btn btn-default btn-lg"&gt;Click Me!&lt;/button&gt;
+        data-purplecoat-color="rgba(63, 159, 252, 0.8)"
+        class="btn btn-default btn-lg"&gt;Click Me!&lt;/button&gt;
 
 &lt;img data-purplecoat="bluecoat"
-   data-purplecoat-label="Hello!"
-   src="holder.js/200x150/#FE97CA:#D64F91"&gt;</code></pre>
+     data-purplecoat-label="Hello!"
+     src="holder.js/200x150/#FE97CA:#D64F91"&gt;</code></pre>
+      </div>
+    </div>
+    <div class="row space-lg">
+      <div class="col-md-12">
+        <h2 class="subheading">Example Use Case</h2>
+      </div>
+      <div class="col-md-6 col-md-offset-3 space-md">
+      <p><a href="http://ellekasai.github.io/shiori" target="_blank">Shiori</a> is a Jekyll blog theme I designed. Shiori lets you customize its layout by modifying the html files under its <code>_includes</code> directory.</p>
+        <p>Here I added purplecoat.js on Shiori's demo page. Users can now understand which part of the layout corresponds to which html file.</p>
+        <p class="space-md text-center"><a href="http://ellekasai.github.io/shiori" target="_blank" class="btn btn-primary btn-lg">View Shiori &rarr;</a></p>
+        <p class="space-md thumbnail">
+          <img src="http://f.cl.ly/items/10023K3W2A3F1y423x2c/Screen%20Recording%202014-11-09%20at%2000%3A38.gif" alt="Shiori" class="img-responsive">
+        </p>
+      </div>
+    </div>
+    <div class="row space-lg">
+      <div class="col-md-12">
+        <h2 class="subheading">Author</h2>
+      </div>
+      <figure class="col-md-6 col-md-offset-3 space-md text-center"><img src="https://avatars0.githubusercontent.com/u/2410692?v=2&amp;s=150" alt="Elle Kasai" class="img-circle"></figure>
+      <div class="col-md-6 col-md-offset-3 space-md">
+        <p>Purplecoat.js is written by <strong>Elle Kasai</strong>, a UI/UX designer based in Vancouver.</p>
+        <p class="space-md text-center"><a href="http://ellekasai.com/about/" target="_blank" class="btn btn-primary btn-lg">Learn More about Elle &rarr;</a></p>
+        <p class="space-md text-center"><a href="https://twitter.com/ellekasai" class="twitter-follow-button" data-show-screen-name="false" data-show-count="true" data-dnt="true" data-size="large">Follow @ellekasai</a></p>
+      </div>
+    </div>
+    <div class="row space-lg">
+      <div class="col-md-12">
+        <h2 class="subheading">Thanks!</h2>
+      </div>
+      <div class="col-md-6 col-md-offset-3">
+        <p class="text-center"><a href="https://twitter.com/share" class="twitter-share-button" data-via="ellekasai" data-size="large">Tweet</a> <iframe src="http://ghbtns.com/github-btn.html?user=ellekasai&repo=purplecoat.js&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30" style="margin-top: 14px;"></iframe></p>
       </div>
     </div>
   </main>
@@ -94,5 +140,7 @@ Click Me!
   <script type="text/javascript" src="purplecoat.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
 </body>
 </html>
