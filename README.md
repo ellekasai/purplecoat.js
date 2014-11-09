@@ -1,4 +1,4 @@
-# Purplecoat.js
+# :womans_clothes: Purplecoat.js :womans_clothes:
 
 Purplecoat.js lets you create labeled overlays that can be triggered with a click. And you don't need to write a single line of Javascript.
 
