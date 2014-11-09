@@ -15,31 +15,80 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
         <h1 class="title">purplecoat.js</h1>
-        <p class="lead row-md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam autem, earum laudantium, blanditiis porro odit! </p>
+        <p class="lead space-md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam autem, earum laudantium, blanditiis porro odit! </p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tenetur facere nihil pariatur vitae odit. Architecto eaque provident cupiditate cumque nostrum dolore quasi amet qui corporis dolorum labore voluptatibus, voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tenetur facere nihil pariatur vitae odit. Architecto eaque provident cupiditate cumque nostrum dolore quasi amet qui corporis dolorum labore voluptatibus, voluptas.</p>
       </div>
     </div>
-    <div class="row row-md">
+    <div class="row space-lg">
       <div class="col-md-12">
         <h2 class="subheading">Usage</h2>
       </div>
-      <div class="col-md-12 row-md">
-        <div class="col-md-6 example-step1">
-          <p><strong>Step 1: </strong> Add <code>data-purplecoat="foo"</code> and <code>data-purplecoat-label="Hello!"</code> to any element.</p>
-          <img data-purplecoat="foo" data-purplecoat-label="Hello!" src="holder.js/200x150/#FE97CA:#D64F91">
-          <pre><code class="html">&lt;img data-purplecoat="foo"
-       data-purplecoat-label="Hello!"
-       src="holder.js/200x150/#FE97CA:#D64F91"&gt;</code></pre>
-        </div>
-        <div class="col-md-6 example-step2">
-          <p><strong>Step 2:</strong> Add <code>data-purplecoat-toggle="foo"</code> to any clickable element.</p>
-          <p>Now, go ahead and click this button to show the overlay label. Click again to hide the label.</p>
-          <button data-purplecoat-toggle="foo" class="btn btn-default btn-lg">Click Me!</button>
-          <pre><code class="html">&lt;button data-purplecoat-toggle="foo" class="btn btn-default">
-  Click Me!
+      <div class="col-md-6 space-md example-step1">
+        <p><strong>Step 1: </strong> Add <code>data-purplecoat="foo"</code> and <code>data-purplecoat-label="Hello!"</code> to any element.</p>
+        <img data-purplecoat="foo" data-purplecoat-label="Hello!" src="holder.js/200x150/#FE97CA:#D64F91">
+        <pre><code class="html">&lt;img data-purplecoat="foo"
+   data-purplecoat-label="Hello!"
+   src="holder.js/200x150/#FE97CA:#D64F91"&gt;</code></pre>
+      </div>
+      <div class="col-md-6 space-md example-step2">
+        <p><strong>Step 2:</strong> Add <code>data-purplecoat-toggle="foo"</code> to any clickable element.</p>
+        <p>Now, go ahead and click this button to show the overlay label. Click again to hide the label.</p>
+        <button data-purplecoat-toggle="foo" class="btn btn-default btn-lg">Click Me!</button>
+        <pre><code class="html">&lt;button data-purplecoat-toggle="foo" class="btn btn-default">
+Click Me!
 &lt;/button&gt;</code></pre>
-          <p class="text-muted">(<strong>Explanation:</strong> The value of <code>deta-purplecoat-toggle</code> must match the value of <code>data-purplecoat</code> to make this all work.)</p>
+        <p class="text-muted">(<strong>Explanation:</strong> The value of <code>deta-purplecoat-toggle</code> must match the value of <code>data-purplecoat</code> to make this all work.)</p>
+      </div>
+    </div>
+    <div class="row space-lg">
+      <div class="col-md-12">
+        <h2 class="subheading">Customizations</h2>
+      </div>
+      <div class="col-md-6 space-md example-multiple">
+        <p>You can create multiple triggers:</p>
+        <div class="space-md">
+          <button data-purplecoat-toggle="odd" class="btn btn-default btn-lg">Odd</button>
+          <button data-purplecoat-toggle="even" class="btn btn-default btn-lg">Even</button>
         </div>
+        <div class="space-md">
+          <img data-purplecoat="odd" data-purplecoat-label="1 is odd" src="holder.js/100x80/#FE97CA:#D64F91/text:1">
+          <img data-purplecoat="even" data-purplecoat-label="2 is even" src="holder.js/100x80/#FE97CA:#D64F91/text:2">
+          <img data-purplecoat="odd" data-purplecoat-label="3 is odd" src="holder.js/100x80/#FE97CA:#D64F91/text:3">
+          <img data-purplecoat="even" data-purplecoat-label="4 is even" src="holder.js/100x80/#FE97CA:#D64F91/text:4">
+        </div>
+        <pre class="space-md"><code class="html">&lt;button data-purplecoat-toggle="odd"
+      class="btn btn-default btn-lg"&gt;Odd&lt;/button&gt;
+&lt;button data-purplecoat-toggle="even"
+      class="btn btn-default btn-lg"&gt;Even&lt;/button&gt;
+
+&lt;img data-purplecoat="odd"
+   data-purplecoat-label="1 is odd"
+   src="holder.js/100x80/#FE97CA:#D64F91/text:1"&gt;
+&lt;img data-purplecoat="even"
+   data-purplecoat-label="2 is even"
+   src="holder.js/100x80/#FE97CA:#D64F91/text:2"&gt;
+&lt;img data-purplecoat="odd"
+   data-purplecoat-label="3 is odd"
+   src="holder.js/100x80/#FE97CA:#D64F91/text:3"&gt;
+&lt;img data-purplecoat="even"
+   data-purplecoat-label="4 is even"
+   src="holder.js/100x80/#FE97CA:#D64F91/text:4"&gt;</code></pre>
+      </div>
+      <div class="col-md-6 space-md">
+        <p>You can also customize the overlay color via <code>data-purplecoat-color</code>:</p>
+        <div class="space-md">
+          <button data-purplecoat-toggle="bluecoat" data-purplecoat-color="rgba(71, 120, 252, 0.8)" class="btn btn-default btn-lg">Click Me!</button>
+        </div>
+        <div class="space-md">
+          <img data-purplecoat="bluecoat" data-purplecoat-label="Hello!" src="holder.js/200x150/#FE97CA:#D64F91">
+        </div>
+        <pre class="space-md"><code class="html">&lt;button data-purplecoat-toggle="bluecoat"
+      data-purplecoat-color="rgba(63, 159, 252, 0.8)"
+      class="btn btn-default btn-lg"&gt;Click Me!&lt;/button&gt;
+
+&lt;img data-purplecoat="bluecoat"
+   data-purplecoat-label="Hello!"
+   src="holder.js/200x150/#FE97CA:#D64F91"&gt;</code></pre>
       </div>
     </div>
   </main>
