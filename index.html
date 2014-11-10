@@ -15,13 +15,13 @@
   <main class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
-      <h1 class="title">purplecoat<span class="extension">.js</span></h1>
-        <p class="lead space-md">Purplecoat.js lets you create labeled overlays that can be triggered with a click. And you don't need to write a single line of Javascript.</p>
+        <h1 data-purplecoat="intro" data-purplecoat-label="Hello from Purplecoat!" class="title">purplecoat<span class="extension">.js</span></h1>
+        <p data-purplecoat="intro" data-purplecoat-label="Click the button again to hide this :)" class="lead space-md">Purplecoat.js lets you create labeled overlays that can be triggered with a click. And you don't need to write a single line of Javascript.</p>
       </div>
     </div>
     <div class="row space-lg">
-      <div class="col-md-6 col-md-offset-3">
-        <p class="text-center"><a href="https://github.com/ellekasai/purplecoat.js" target="_blank" class="btn btn-primary btn-lg">Download on GitHub &rarr;</a></p>
+      <div class="col-md-8 col-md-offset-2">
+        <p class="text-center"><button data-purplecoat-toggle="intro" class="btn btn-default btn-lg">&#10003; Click Me for a Demo</button> <a href="https://github.com/ellekasai/purplecoat.js" target="_blank" class="btn btn-primary btn-lg">Download on GitHub &rarr;</a></p>
         <p class="text-center"><code>bower install purplecoat.js</code></p>
       </div>
       <div class="col-md-6 col-md-offset-3">
@@ -57,6 +57,23 @@
 Click Me!
 &lt;/button&gt;</code></pre>
         <p class="text-muted">(<strong>Explanation:</strong> The value of <code>deta-purplecoat-toggle</code> must match the value of <code>data-purplecoat</code> to make this all work.)</p>
+      </div>
+    </div>
+    <div class="row space-lg">
+      <div class="col-md-12">
+        <h2 class="subheading">Example Use Case</h2>
+      </div>
+      <div class="col-md-6 col-md-offset-3 space-md">
+      <p><a href="http://ellekasai.github.io/shiori" target="_blank">Shiori</a> is a Jekyll blog theme I designed. Shiori lets you customize its layout by modifying the html files under its <code>_includes</code> directory.</p>
+        <p>Here I added purplecoat.js on Shiori's demo page. Users can now understand which part of the layout corresponds to which html file.</p>
+        <p class="space-md text-center"><a href="http://ellekasai.github.io/shiori" target="_blank" class="btn btn-primary btn-lg">View Shiori &rarr;</a></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <p class="space-md thumbnail center-block">
+          <img src="http://f.cl.ly/items/10023K3W2A3F1y423x2c/Screen%20Recording%202014-11-09%20at%2000%3A38.gif" alt="Shiori" class="img-responsive">
+        </p>
       </div>
     </div>
     <div class="row space-lg">
@@ -105,19 +122,6 @@ Click Me!
 &lt;img data-purplecoat="bluecoat"
      data-purplecoat-label="Hello!"
      src="holder.js/200x150/#FE97CA:#D64F91"&gt;</code></pre>
-      </div>
-    </div>
-    <div class="row space-lg">
-      <div class="col-md-12">
-        <h2 class="subheading">Example Use Case</h2>
-      </div>
-      <div class="col-md-6 col-md-offset-3 space-md">
-      <p><a href="http://ellekasai.github.io/shiori" target="_blank">Shiori</a> is a Jekyll blog theme I designed. Shiori lets you customize its layout by modifying the html files under its <code>_includes</code> directory.</p>
-        <p>Here I added purplecoat.js on Shiori's demo page. Users can now understand which part of the layout corresponds to which html file.</p>
-        <p class="space-md text-center"><a href="http://ellekasai.github.io/shiori" target="_blank" class="btn btn-primary btn-lg">View Shiori &rarr;</a></p>
-        <p class="space-md thumbnail">
-          <img src="http://f.cl.ly/items/10023K3W2A3F1y423x2c/Screen%20Recording%202014-11-09%20at%2000%3A38.gif" alt="Shiori" class="img-responsive">
-        </p>
       </div>
     </div>
     <div class="row space-lg">
