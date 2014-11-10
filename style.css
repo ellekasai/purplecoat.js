@@ -49,6 +49,9 @@ main {
 .space-md {
   margin-top: 30px;
 }
+.space-sm {
+  margin-top: 15px;
+}
 .title, .subheading {
   font-family: 'Gentium Book Basic', serif;
   font-style: italic;
