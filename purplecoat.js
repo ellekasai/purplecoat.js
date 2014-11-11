@@ -5,6 +5,19 @@ $(function () {
   var $style = $('<style/>');
   $style.html(styles);
   $('head').prepend($style);
+    
+  $(window).resize(function() {
+      $('.purplecoat').each(function() {
+          $overlayedElement = $(this).data('overlayed-element');
+          $(this).css({
+              'top': $overlayedElement.offset().top,
+              'left': $overlayedElement.offset().left,
+              'width': $overlayedElement.width(),
+              'height': $overlayedElement.height() 
+          });
+      });
+  });
+    
 
   $('[data-purplecoat-toggle]').on('click', function () {
 
@@ -40,7 +53,9 @@ $(function () {
           if (purplecoatColorData) {
             $purplecoat.css('background-color', purplecoatColorData);
           }
-
+          $purplecoat.data('overlayed-element',$myself);
+                    
+          $purplecoat.click(function() {console.log($(this).data('overlayed-element'))})    
           $purplecoat
             .attr('data-purplecoat-for', purplecoatToggleData)
             .css({
