@@ -55,7 +55,6 @@ $(function () {
           }
           $purplecoat.data('overlayed-element',$myself);
                     
-          $purplecoat.click(function() {console.log($(this).data('overlayed-element'))})    
           $purplecoat
             .attr('data-purplecoat-for', purplecoatToggleData)
             .css({
