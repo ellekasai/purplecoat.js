@@ -6,6 +6,30 @@ $(function ($) {
   $style.html(styles);
   $('head').prepend($style);
 
+  var createOverlay = function(element, elementData, label, color){
+    var $purplecoat = $('<div class="purplecoat"></div>');
+    var $purplecoatInner = $('<div class="purplecoat-inner"></div>');
+    var $purplecoatInnerText = $('<div class="purplecoat-inner-text"></div>');
+
+    $('body').append($purplecoat);
+    $purplecoat.append($purplecoatInner);
+    $purplecoatInnerText.html(label);
+    $purplecoatInner.append($purplecoatInnerText);
+
+    if (color) {
+      $purplecoat.css('background-color', color);
+    }
+
+    $purplecoat
+      .attr('data-purplecoat-for', elementData)
+      .css({
+        'top': element.offset().top,
+        'left': element.offset().left,
+        'width': element.width(),
+        'height': element.height() })
+      .fadeIn();
+  }
+
   var purplecoat = function(target){
     var purplecoatToggleData = target.data('purplecoat-toggle');
     var $purplecoatVisible = $("[data-purplecoat-for=" + purplecoatToggleData + "]:visible");
@@ -26,28 +50,7 @@ $(function ($) {
           return;
         }
 
-        var $purplecoat = $('<div class="purplecoat"></div>');
-        $('body').append($purplecoat);
-
-        var $purplecoatInner = $('<div class="purplecoat-inner"></div>');
-        $purplecoat.append($purplecoatInner);
-
-        var $purplecoatInnerText = $('<div class="purplecoat-inner-text"></div>');
-        $purplecoatInnerText.html($myself.data('purplecoat-label'));
-        $purplecoatInner.append($purplecoatInnerText);
-
-        if (purplecoatColorData) {
-          $purplecoat.css('background-color', purplecoatColorData);
-        }
-
-        $purplecoat
-          .attr('data-purplecoat-for', purplecoatToggleData)
-          .css({
-            'top': $myself.offset().top,
-            'left': $myself.offset().left,
-            'width': $myself.width(),
-            'height': $myself.height() })
-          .fadeIn();
+        createOverlay($myself, purplecoatToggleData, $myself.data('purplecoat-label'), purplecoatColorData);
 
       });
     }
@@ -55,11 +58,31 @@ $(function ($) {
   }
 
   $.fn.purplecoat = function(options){
-    var options = $.extend({
-      // color: rgba(63, 159, 252, 0.8)
+    var self = this;
+    var options = typeof options === "boolean" ? {hide: true, data: self.selector} : $.extend({
+      color: "#EF0038",
+      label: "PurpleCoat",
+      data: self.selector,
+      hide: false
     }, options);
 
+    if(options.hide){
+      $("[data-purplecoat-for=" + options.data + "]:visible").fadeOut({
+        complete: function(){
+          $(this).remove();
+        }
+      });
+      return this;
+    }
+
     return this.each(function(){
+      var $myself = $(this);
+
+      if ($myself.is(":hidden")) {
+        return;
+      }
+
+      createOverlay($myself, options.data, options.label, options.color);
 
     });
   }
