@@ -44,6 +44,7 @@ $(function () {
           $purplecoat
             .attr('data-purplecoat-for', purplecoatToggleData)
             .css({
+              'margin': $myself.css('padding'),
               'top': $myself.offset().top,
               'left': $myself.offset().left,
               'width': $myself.width(),
