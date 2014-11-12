@@ -8,7 +8,95 @@
   <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/default.min.css">
-  <link rel="stylesheet" href="style.css">
+  <style type='text/css'>
+    /*———————————–———————————–
+      Note: These styles are only for the documentation and don't need to be used with purplecoat.js
+    ———————————–———————————–*/
+
+    @charset "UTF-8";
+
+    /*———————————–———————————–
+      Overwrite Bootstrap
+    ———————————–———————————–*/
+
+    body {
+      border-top: 5px solid rgba(142, 68, 173, 1);
+      font-family: 'Alegreya Sans', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+    }
+    code {
+      color: inherit;
+      font-size: 80%;
+      background-color: #F5DDFF;
+    }
+    .btn-primary {
+      border-color: #804897 !important;
+      background-color: #9b59b6 !important;
+      color: #FFF !important;
+    }
+    .btn-primary:hover {
+      border-color: #783892 !important;
+      background-color: #8e44ad !important;
+      color: #FFF !important;
+    }
+    .hljs {
+      padding: 0;
+      background: transparent;
+    }
+    .lead {
+      font-size: 24px;
+    }
+
+    /*———————————–———————————–
+      Styles
+    ———————————–———————————–*/
+
+    .main-padding {
+      padding-top: 100px;
+    }
+    main {
+      padding-bottom: 100px;
+    }
+    .space-lg {
+      margin-top: 45px;
+    }
+    .space-md {
+      margin-top: 30px;
+    }
+    .space-sm {
+      margin-top: 15px;
+    }
+    .title, .subheading {
+      font-family: 'Gentium Book Basic', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .title {
+      font-size: 50px;
+    }
+    .extension {
+      color: rgba(142, 68, 173, 1);
+    }
+    .subheading {
+      font-size: 35px;
+      text-align: center;
+    }
+    .example-step1 > img,
+    .example-step2 > button {
+      margin: 15px 0 30px;
+    }
+    .example-step2 > p:last-child {
+      margin-top: 30px;
+    }
+    .example-multiple button + button {
+      margin-left: 15px;
+    }
+    .example-multiple img + img {
+      margin-left: 15px;
+    }
+  
+  </style
 </head>
 <body>
   <div class="main-padding hidden-xs"></div>
@@ -34,9 +122,9 @@
         <h2 class="subheading">Usage</h2>
       </div>
       <div class="col-md-6 space-md col-md-offset-3">
-        <p><strong>Step 0: </strong> Add purplecoat-min.js along with jQuery.</p>
+        <p><strong>Step 0: </strong> Add purplecoat.min.js along with jQuery.</p>
          <pre><code class="html">&lt;script type="text/javascript" src="jquery.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="purplecoat-min.js">&lt;/script&gt;</code></pre>
+&lt;script type="text/javascript" src="purplecoat.min.js">&lt;/script&gt;</code></pre>
       </div>
       <div class="col-md-6 space-md example-step1">
         <p><strong>Step 1: </strong> Add <code>data-purplecoat="foo"</code> and <code>data-purplecoat-label="Hello!"</code> to any element.</p>
@@ -104,27 +192,137 @@
       <div class="col-md-6 space-md">
         <p>You can also customize the overlay color via <code>data-purplecoat-color</code>:</p>
         <div class="space-md">
-          <button data-purplecoat-toggle="bluecoat" data-purplecoat-color="rgba(71, 120, 252, 0.8)" class="btn btn-default btn-lg">&#10003; Click Me</button>
+          <button data-purplecoat-toggle="bluecoat" class="btn btn-default btn-lg">&#10003; Click Me</button>
         </div>
         <div class="space-md">
-          <img data-purplecoat="bluecoat" data-purplecoat-label="Hello!" src="holder.js/200x150/#FE97CA:#D64F91">
+          <img data-purplecoat="bluecoat" data-purplecoat-label="Hello!" data-purplecoat-color="rgba(71, 120, 252, 0.8)" src="holder.js/200x150/#FE97CA:#D64F91">
         </div>
-        <pre class="space-md"><code class="html">&lt;button data-purplecoat-toggle="bluecoat"
-        data-purplecoat-color="rgba(63, 159, 252, 0.8)"&gt;...&lt;/button&gt;
+        <pre class="space-md"><code class="html">&lt;button data-purplecoat-toggle="bluecoat"&gt;...&lt;/button&gt;
 
 &lt;img data-purplecoat="bluecoat"
-     data-purplecoat-label="Hello!" ...&gt;</code></pre>
+     data-purplecoat-label="Hello!" 
+     data-purplecoat-color="rgba(63, 159, 252, 0.8)" ...&gt;</code></pre>
       </div>
     </div>
+
+
+
+      <div class="col-md-6 space-md example-multiple">
+        <p>Easing via <code>data-purplecoat-easing</code></p>
+        <div class="space-md">
+          <button data-purplecoat-toggle="linear" class="btn btn-default btn-lg">&#10003; Linear</button>
+          <button data-purplecoat-toggle="swing" class="btn btn-default btn-lg">&#10003; Swing</button>
+        </div>
+        <div class="space-md">
+          <img data-purplecoat="linear" data-purplecoat-easing='linear' data-purplecoat-label="Linear" src="holder.js/80x80/#FE97CA:#D64F91/text:1">
+          <img data-purplecoat="swing" data-purplecoat-easing='swing' data-purplecoat-label="Swing" src="holder.js/80x80/#FE97CA:#D64F91/text:2">
+        </div>
+        <pre class="space-md"><code class="html">
+&lt;button data-purplecoat-toggle="linear" ...&gt; ...&lt;/button&gt;
+&lt;button data-purplecoat-toggle="swing" ...&gt; ...&lt;/button&gt;
+
+&lt;img data-purplecoat="linear" 
+     data-purplecoat-easing='linear' ...&gt;
+&lt;img data-purplecoat="swing" 
+     data-purplecoat-easing='swing' ...&gt;
+</code></pre>
+      </div>
+      <div class="col-md-6 space-md">
+        <p>Duration via <code>data-purplecoat-duration</code></p>
+        <div class="space-md">
+          <button data-purplecoat-toggle="duration-100" class="btn btn-default btn-lg">&#10003; 100ms</button>
+          <button data-purplecoat-toggle="duration-400" class="btn btn-default btn-lg">&#10003; 400ms</button>
+          <button data-purplecoat-toggle="duration-1200" class="btn btn-default btn-lg">&#10003; 1200ms</button>
+        </div>
+        <div class="space-md">
+          <img data-purplecoat="duration-100" data-purplecoat-duration='100' data-purplecoat-label="100ms" src="holder.js/80x80/#FE97CA:#D64F91/text:1">
+          <img data-purplecoat="duration-400" data-purplecoat-duration='400' data-purplecoat-label="400ms (default)" src="holder.js/80x80/#FE97CA:#D64F91/text:1">
+          <img data-purplecoat="duration-1200" data-purplecoat-duration='1200' data-purplecoat-label="1200ms" src="holder.js/80x80/#FE97CA:#D64F91/text:3">
+        </div>
+        <pre class="space-md"><code class="html">
+&lt;button data-purplecoat-toggle="duration-100" ...&gt; ...&lt;/button&gt;
+&lt;button data-purplecoat-toggle="duration-400" ...&gt; ...&lt;/button&gt;
+&lt;button data-purplecoat-toggle="duration-1200" ...&gt; ...&lt;/button&gt;
+
+&lt;img data-purplecoat="linear" 
+     data-purplecoat-duration='100' ...&gt;
+&lt;img data-purplecoat="swing" 
+     data-purplecoat-duration='400' ...&gt;
+&lt;img data-purplecoat="swing" 
+     data-purplecoat-duration='1200' ...&gt;
+</code></pre>
+      </div>
+    </div>
+
+
+
+
+    <div class="row space-lg">
+      <div class="col-md-12">
+        <h2 class="subheading">Defaults Options</h2>
+      </div>
+      <div class="col-md-6 col-md-offset-3 space-md">
+        <pre><code class='javascript'>
+$('[data-purplecoat-toggle]').purplecoat(
+  // the overlay container for purplecoat, optionally can be styled with: .purplecoat
+  container: {
+    display        : 'none',
+    position       : 'absolute',
+    padding        : '5px',
+    boxSizing      : 'border-box',
+    backgroundColor: 'rgba(142, 68, 173, 0.9)',
+    color          : '#FFF',
+    textAlign      : 'center',
+    fontWeight     : 'bold',
+    overflow       : 'hidden',
+    zIndex         : '9999'
+  },
+  // inner container options, used to center the content, optionally can be styled with: .purplecoat-inner
+  innerContainer : {
+    display: 'table',
+    width  : '100%',
+    height : '100%'
+  },
+  // the text container, optionally can be styled with: .purplecoat-inner-text
+  textContainer : {
+    display      : 'table-cell',
+    verticalAlign: 'middle'
+  },
+  // fade options
+  fade: {
+    duration  : 400, // ms
+    easing    : 'swing', // see: http://api.jquery.com/fadetoggle/
+    onComplete: function(){ alert('You clicked me!') } // called on shown/hidden
+  }
+);
+        </code></pre>
+        <p>
+          This jQuery plugin is auto-initialized with defaults, you can reinitialization at anytime.
+
+          <pre><code class='javascript'>
+$('#someButton[data-purplecoat-toggle]').purplecoat({
+  fade: {
+    onComplete: function(){alert('You clicked a different me!')}
+  }
+});
+          </code></pre>
+        </p>
+      </div>
+    </div>
+
+
     <div class="row space-lg">
       <div class="col-md-12">
         <h2 class="subheading">Author</h2>
       </div>
       <figure class="col-md-6 col-md-offset-3 space-md text-center"><img src="https://avatars0.githubusercontent.com/u/2410692?v=2&amp;s=150" alt="Elle Kasai" class="img-circle"></figure>
       <div class="col-md-6 col-md-offset-3 space-md">
-        <p>Purplecoat.js is written by <strong>Elle Kasai</strong>, a UI/UX designer based in Vancouver.</p>
+        <p><center>Purplecoat.js is written by <strong>Elle Kasai</strong>, a UI/UX designer based in Vancouver.</center></p>
         <p class="space-md text-center"><a href="http://ellekasai.com/about/" target="_blank" class="btn btn-primary btn-lg">Learn More about Elle &rarr;</a></p>
         <p class="space-md text-center"><a href="https://twitter.com/ellekasai" class="twitter-follow-button" data-show-screen-name="false" data-show-count="true" data-dnt="true" data-size="large">Follow @ellekasai</a></p>
+      </div>
+      <div class="col-md-6 col-md-offset-3 space-md">
+        <p><center>Improved by <strong>Robert Lowe</strong>, a software developer based in Toronto.</center></p>
       </div>
     </div>
     <div class="row space-lg">
