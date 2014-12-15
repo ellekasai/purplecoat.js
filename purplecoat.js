@@ -37,6 +37,10 @@ $(function () {
           $purplecoatInnerText.html($myself.data('purplecoat-label'));
           $purplecoatInner.append($purplecoatInnerText);
 
+          if ($myself.data('purplecoat-color')) {
+            purplecoatColorData = $myself.data('purplecoat-color');
+          }
+
           if (purplecoatColorData) {
             $purplecoat.css('background-color', purplecoatColorData);
           }
