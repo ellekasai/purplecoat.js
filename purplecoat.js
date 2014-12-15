@@ -46,8 +46,8 @@ $(function () {
             .css({
               'top': $myself.offset().top,
               'left': $myself.offset().left,
-              'width': $myself.width(),
-              'height': $myself.height() })
+              'width': $myself.outerWidth(),
+              'height': $myself.outerHeight() })
             .fadeIn();
 
         });
