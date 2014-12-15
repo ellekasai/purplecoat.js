@@ -14,3 +14,10 @@ Elle Kasai
 - [Twitter](http://twitter.com/ellekasai)
 
 [MIT License](http://ellekasai.mit-license.org).
+
+### Special Thanks
+
+jQuery Plugin Help:
+
+- [@cg219](https://github.com/ellekasai/purplecoat.js/pull/8)
+- [@RobertLowe ](https://github.com/ellekasai/purplecoat.js/pull/6)
