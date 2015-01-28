@@ -4,9 +4,9 @@
     var $purplecoatVisible = $("[data-purplecoat-for=" + purplecoatToggleData + "]:visible");
     var $purplecoatHidden = $("[data-purplecoat-for=" + purplecoatToggleData + "]:hidden");
 
-    if ($purplecoatVisible.length()) {
+    if ($purplecoatVisible.length) {
       $purplecoatVisible.fadeOut();
-    } else if ($purplecoatHidden.length()) {
+    } else if ($purplecoatHidden.length) {
       $purplecoatHidden.fadeIn();
     } else {
       target.each(function () {
