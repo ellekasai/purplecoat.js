@@ -1,0 +1,19 @@
+{
+  "name": "purplecoat.js",
+  "version": "0.1.0",
+  "main": "purplecoat.min.js",
+  "authors": [
+    "Elle Kasai <elle.kasai@gmail.com>"
+  ],
+  "description": "Simple Labeled Overlays",
+  "keywords": [
+    "purplecoat"
+  ],
+  "license": "MIT",
+  "homepage": "http://github.com/ellekasai/purplecoat.js",
+  "ignore": [
+    "**/.*",
+    "index.html",
+    "style.css"
+  ]
+}
